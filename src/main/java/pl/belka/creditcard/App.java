@@ -1,7 +1,8 @@
-package pl.belka;
+package pl.belka.creditcard;
 
 import java.math.BigDecimal;
 import java.util.Collections;
+
 
 public class App {
     public static void main(String [] args) {
