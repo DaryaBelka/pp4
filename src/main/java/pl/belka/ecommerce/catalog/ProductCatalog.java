@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.UUID;
 
 public class ProductCatalog {
+
     private ArrayList<Product> products;
 
-    public ProductCatalog(){
+    public ProductCatalog() {
         this.products = new ArrayList<>();
     }
 
@@ -20,8 +21,8 @@ public class ProductCatalog {
         UUID id = UUID.randomUUID();
         Product newProduct = new Product(id, name, description);
 
-
         products.add(newProduct);
+
         return newProduct.getId();
     }
 

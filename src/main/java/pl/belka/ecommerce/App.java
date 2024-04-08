@@ -1,23 +1,21 @@
 package pl.belka.ecommerce;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import pl.belka.ecommerce.catalog.ProductCatalog;
-import pl.belka.ecommerce.catalog.ProductCatalogController;
+import java.util.Collections;
 
-@SpringBootApplication
 public class App {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
-    }
+        var name = "Jakub";
+        System.out.println(String.format("Hello %s", name));
 
-    @Bean
-    ProductCatalog createMyProductCatalog() {
-        var catalog = new ProductCatalog();
-        catalog.addProduct("Legoset 8083", "Nice");
-        catalog.addProduct("Cobi blocks", "Nice one");
+        System.out.println("It Works");
 
-        return catalog;
+        int a = 2;
+        int b = 5;
+        int result = a + b;
+        System.out.println(result);
+
+        var myList = Collections.emptyList();
+
+        System.out.println(myList);
     }
- }
+}

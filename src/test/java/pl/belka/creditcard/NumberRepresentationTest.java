@@ -2,13 +2,12 @@ package pl.belka.creditcard;
 
 import org.junit.jupiter.api.Test;
 
-import javax.annotation.processing.SupportedSourceVersion;
 import java.math.BigDecimal;
 
 public class NumberRepresentationTest {
 
     @Test
-    void doubleTest(){
+    void doubleTest() {
         double a = 0.02;
         double b = 0.03;
         System.out.println("Double");
@@ -16,7 +15,7 @@ public class NumberRepresentationTest {
     }
 
     @Test
-    void floatTest(){
+    void floatTest() {
         float a = 0.002f;
         float b = 0.003f;
         System.out.println("Float");
@@ -24,9 +23,10 @@ public class NumberRepresentationTest {
     }
 
     @Test
-    void bigDecimalTest(){
+    void bigDecimalTest() {
         BigDecimal a = new BigDecimal("0.002");
-        BigDecimal b = new BigDecimal("0.003");
+        BigDecimal b= new BigDecimal("0.003");
+
         System.out.println("Big Decimal");
         System.out.println(a.subtract(b));
     }
