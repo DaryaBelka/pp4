@@ -1,4 +1,4 @@
-package pl.belka.creditcard;
+package pl.belka.hello;
 
 import org.junit.jupiter.api.Test;
 

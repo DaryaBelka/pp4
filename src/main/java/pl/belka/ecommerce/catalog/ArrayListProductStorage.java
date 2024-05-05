@@ -1,24 +1,24 @@
 package pl.belka.ecommerce.catalog;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayListProductStorage implements ProductStorage {
-
     private ArrayList<Product> products;
 
-    public ArrayListProductStorage(){
-        products = new ArrayList<>();
+    public ArrayListProductStorage() {
+        this.products = new ArrayList<>();
     }
 
     @Override
     public List<Product> allProducts() {
-        return products;
+        return Collections.unmodifiableList(products);
     }
 
     @Override
-    public void add(Product newProduct){
-        products.add(newProduct);
+    public void add(Product product) {
+        products.add(product);
     }
 
     @Override

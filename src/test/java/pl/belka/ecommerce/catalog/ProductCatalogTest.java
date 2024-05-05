@@ -1,4 +1,5 @@
-package ecommerce.catalog;
+package pl.belka.ecommerce.catalog;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
@@ -52,6 +53,6 @@ public class ProductCatalogTest {
     }
 
     private static ProductCatalog thereIsProductCatalog() {
-        return new ProductCatalog();
+        return new ProductCatalog(new ArrayListProductStorage());
     }
 }
