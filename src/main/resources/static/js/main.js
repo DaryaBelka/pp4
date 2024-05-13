@@ -14,7 +14,7 @@ const createProductHtml = (productData) => {
         <div>
             <h4>${productData.name}</h4>
             <span>${productData.price}</span>
-            <img src = "https://cdn.britannica.com/70/234870-050-D4D024BB/Orange-colored-cat-yawns-displaying-teeth.jpg"/>
+            <img src = "https://images.prismic.io/carwow/e2dbfc3f-127b-4de0-a839-e082dc488eb4_RHD+BMW+M8+Exterior+2.jpg"/>
             <button data-id="${productData.id}">Add to cart</button>
         </div>
     `
