@@ -60,6 +60,12 @@
             <version>3.25.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.7.0</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
