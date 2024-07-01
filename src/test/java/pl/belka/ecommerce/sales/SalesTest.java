@@ -1,10 +1,22 @@
 package pl.belka.ecommerce.sales;
+
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import pl.belka.ecommerce.catalog.ProductCatalog;
+import pl.belka.ecommerce.sales.cart.InMemoryCartStorage;
+import pl.belka.ecommerce.sales.offering.Offer;
+import pl.belka.ecommerce.sales.offering.OfferCalculator;
+import pl.belka.ecommerce.sales.reservation.ReservationRepository;
+import pl.belka.ecommerce.sales.reservation.SpyPaymentGateway;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
 
 public class SalesTest {
+    @Autowired
+    ProductCatalog catalog;
+
     @Test
     void itShowsOffer(){
         SalesFacade sales = thereIsSalesFacade();
@@ -17,7 +29,12 @@ public class SalesTest {
     }
 
     private SalesFacade thereIsSalesFacade() {
-        return new SalesFacade();
+        return new SalesFacade(
+                new InMemoryCartStorage(),
+                new OfferCalculator(catalog),
+                new SpyPaymentGateway(),
+                new ReservationRepository()
+        );
     }
 
     private String thereIsExampleCustomer(String id){
@@ -57,7 +74,7 @@ public class SalesTest {
         String productA = thereIsProduct("Example a", BigDecimal.valueOf(10));
         String productB = thereIsProduct("Example b", BigDecimal.valueOf(20));
         String customerA = thereIsExampleCustomer("Darya");
-        String customerB = thereIsExampleCustomer("Michael");
+        String customerB = thereIsExampleCustomer("Pawel");
         SalesFacade sales = thereIsSalesFacade();
 
         sales.addToCart(customerA, productA);

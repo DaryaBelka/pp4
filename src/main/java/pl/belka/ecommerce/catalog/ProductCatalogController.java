@@ -8,16 +8,19 @@ import java.util.List;
 
 @RestController
 public class ProductCatalogController {
-
-    ProductCatalog catalog;
+    private final ProductCatalog catalog;
 
     public ProductCatalogController(ProductCatalog catalog) {
         this.catalog = catalog;
     }
 
     @GetMapping("/api/products")
-    List<Product> getAllProducts() {
+    List<Product> getAllProducts(){
         return catalog.allProducts();
     }
 
+    @GetMapping("/api/published-products")
+    List<Product> getPublishedProducts() {
+        return new ArrayList<>();
+    }
 }

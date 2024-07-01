@@ -1,10 +1,22 @@
 package pl.belka.ecommerce.sales.cart;
 
-import org.apache.el.stream.Optional;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import pl.belka.ecommerce.sales.SalesFacade;
 
 public class InMemoryCartStorage {
-    public Optional<Cart> findByCustomerId(String customerId) {
-        return null;
+    Map<String, Cart> carts;
 
+    public InMemoryCartStorage() {
+        this.carts = new HashMap<>();
+    }
+
+    public Optional<Cart> findByCustomerId(String customerId) {
+        return Optional.ofNullable(carts.get(customerId));
+    }
+
+    public void save(String customerId, Cart cart){
+        carts.put(customerId, cart);
     }
 }
